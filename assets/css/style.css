@@ -1,1 +1,73 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    height: 5rem;
+    background-color: #3f3f3f;
+}
+.menu-header{
+    height: 100%;
+    width: 80%;
+    margin: auto;
+    display: flex;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+    height: 100%;
+    width: 5rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.menu ul{
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    list-style: none;
+    
+}
+
+.menu ul li a{
+    font-family: Poppins , sans-serif ;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    transition: .4s;
+    padding: .1rem 0;
+}
+
+.menu ul li a:hover{
+    color: #bababa;
+    padding: .1rem .5rem;
+    border-radius: .6em;
+}
+
+.menu ul li a.active{
+    color: #bababa;
+    border-bottom: .1rem solid #bababa ;
+}
+
+.container {
+    height: calc(100vh - 5rem);
+    background-color: #3f3f3f;
+    background-image: url(/assets/img/bg.jpg);
+    background-size: cover;
+    background-position:top;
+}
