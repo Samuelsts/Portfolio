@@ -64,10 +64,14 @@ header{
     border-bottom: .1rem solid #bababa ;
 }
 
-.container {
+.img-container {
     height: calc(100vh - 5rem);
     background-color: #3f3f3f;
-    background-image: url(/assets/img/bg.jpg);
-    background-size: cover;
-    background-position:top;
 }
+
+  
+  
+  
+  
+  
+  
