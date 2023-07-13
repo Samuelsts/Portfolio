@@ -7,7 +7,7 @@
 }
 
 header{
-    height: 5rem;
+    height: 4rem;
     background-color: #1e1e1e;
     width:100vw;
     position: fixed;
@@ -25,7 +25,7 @@ header{
     align-items: center;
     background-color: #fff;
     height: 100%;
-    width: 5rem;
+    width: 4rem;
 }
 
 nav.menu {
@@ -73,6 +73,17 @@ nav.menu {
 }
 
 
+
+
+.bm{
+    background-image: url("/assets/img/bmenu.svg");
+    transform: rotate(180deg) scaleX(-1);
+    height: 200px;
+    width: 100%;
+}
+
+
+
 main{
     height: 100vh;
     width: 100%;
@@ -81,10 +92,40 @@ main{
 }
 
 .container{
-    background-color: #bababa;
+    background-color:#fff;
     height: 100vh;
     width: 100%;
+}
+
+.banner{
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.text-area{
+    height: 7rem;
+    background-color: red;
+    
+}
+
+.blob-area{
+    height: 50%;
+    width: 50%;
+    background-color: aqua;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.blob-area .bloob-1{
+    background-image: url('/assets/img/blob/blob-haikei.svg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.blob-area .bloob-1:hover{
+    transform: matrix(0.7,-0.5,0.5,0.4,8.5,0.7);
 }
