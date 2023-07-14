@@ -100,7 +100,6 @@ main{
 }
 
 .container{
-    background-color: red;
     height:100%;
     width: 80%;
     margin: auto;
@@ -110,7 +109,6 @@ main{
 
 .banner{
     display: flex;
-    background-color: aqua;
     margin: auto;
     height: 100%;
     align-items: center;
@@ -118,7 +116,6 @@ main{
 }
 
 .area1{
-    background-color: red;
     height: 200px;
     width: 500px;
     display: inline-block;
@@ -127,7 +124,32 @@ main{
 .text-banner{
     width: 100%;
     height: auto;
+    font-family: Poppins, sans-serif;
 }
+
+.text-banner p {
+    font-size: 1.5rem;
+}
+
+#text{
+    font-size: 3rem;
+    vertical-align: bottom;
+}
+
+.typing-wrapper {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.typing-animation{
+    animation: typing 5s steps(30, end);
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    animation-fill-mode: forwards;
+}
+
+
 
 .social-area{
     display: flex;
@@ -154,10 +176,26 @@ main{
 
 
 .blob-area{
-    background-color: bisque;
     height: 400px;
     width: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    
 }
+
+.blob{
+    height: 100%;
+    width: 100%;
+    background-image: url('/assets/img/blob/blob-haikei.svg');
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+
 
 
 .sobre{
