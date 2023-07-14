@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,700&display=swap');
 
+:root{
+    --corP: #1e1e1e;
+    --corS: #fff;
+    --corT: #898989;
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -8,22 +14,24 @@
 
 header{
     height: 4rem;
-    background-color: #1e1e1e;
+    background-color: var(--corP);
     width:100vw;
     position: fixed;
 }
-.menu-header{
+
+.menu-area{
     height: 100%;
     width: 80%;
     margin: auto;
     display: flex;
+
 }
 
 .logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: var(--corS);
     height: 100%;
     width: 4rem;
 }
@@ -54,21 +62,22 @@ nav.menu {
     font-family: Poppins , sans-serif ;
     font-weight: 400;
     font-size: 1rem;
-    color: #fff;
+    color: var(--corS);
     text-decoration: none;
     transition: .4s;
     margin-right: 2rem;
 }
 
 .menu ul li a:hover{
-    color: #bababa;
-    border-bottom: .1rem solid #bababa ;
+    color: var(--corT);
+    border-bottom: .1rem solid var(--corT) ;
+    transition: 1s;
     
 }
 
 .menu ul li a.active{
-    color: #bababa;
-    border-bottom: .1rem solid #bababa ;
+    color: var(--corT);
+    border-bottom: .1rem solid var(--corT);
     font-size: 1.2rem;
 }
 
@@ -78,7 +87,7 @@ nav.menu {
 .bm{
     background-image: url("/assets/img/bmenu.svg");
     transform: rotate(180deg) scaleX(-1);
-    height: 200px;
+    height: 60px;
     width: 100%;
 }
 
@@ -86,46 +95,72 @@ nav.menu {
 
 main{
     height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
 .container{
-    background-color:#fff;
-    height: 100vh;
-    width: 100%;
+    background-color: red;
+    height:100%;
+    width: 80%;
+    margin: auto;
+
 }
+
 
 .banner{
-    margin: auto;
-    width: 80%;
-    height: 100%;
     display: flex;
+    background-color: aqua;
+    margin: auto;
+    height: 100%;
     align-items: center;
+    justify-content: space-around;
 }
 
-.text-area{
-    height: 7rem;
+.area1{
     background-color: red;
-    
+    height: 200px;
+    width: 500px;
+    display: inline-block;
 }
+
+.text-banner{
+    width: 100%;
+    height: auto;
+}
+
+.social-area{
+    display: flex;
+    height: auto;
+    width: 200px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+.social-link{
+    font-size: 4rem;
+}
+
+.social-link a{
+    color: var(--corT);
+}
+
+.social-link a:hover {
+    color: var(--corP);
+    font-size: 5rem;
+    transition: .7s;
+}
+
+
 
 .blob-area{
-    height: 50%;
-    width: 50%;
-    background-color: aqua;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-color: bisque;
+    height: 400px;
+    width: 400px;
 }
 
-.blob-area .bloob-1{
-    background-image: url('/assets/img/blob/blob-haikei.svg');
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-.blob-area .bloob-1:hover{
-    transform: matrix(0.7,-0.5,0.5,0.4,8.5,0.7);
+
+.sobre{
+    width:80%;
+    height:100vh;
 }
