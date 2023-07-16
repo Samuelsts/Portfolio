@@ -17,6 +17,7 @@ header{
     background-color: var(--corP);
     width:100vw;
     position: fixed;
+    z-index: 100;
 }
 
 .menu-area{
@@ -174,28 +175,39 @@ main{
 }
 
 
-
-.blob-area{
-    height: 400px;
-    width: 400px;
+.area2{
+    background-color: var(--corT);
+    height: 300px;
+    width: 300px;
     display: flex;
-    justify-content: center;
     align-items: center;
-    overflow: hidden;
-    
+    justify-content: center;
+    border-radius: 20%;
+    animation: Animation 8s 4s infinite alternate;
+
 }
 
-.blob{
-    height: 100%;
-    width: 100%;
-    background-image: url('/assets/img/blob/blob-haikei.svg');
-    background-size: cover;
-    background-position: center;
+#s-element{
+    width: 200px;
+    height: 200px;
+    background-color: var(--corP);
+    animation: Animation 8s infinite;
 }
 
-
-
-
+@keyframes Animation {
+    0% {
+        transform: rotate(0deg);
+        border-radius: 0%;
+    }
+    50% {
+        transform: rotate(360deg);
+        border-radius: 50%;
+    }
+    100% {
+        transform: rotate(0deg);
+        border-radius: 0%;
+    }
+}
 
 
 .sobre{
