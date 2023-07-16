@@ -132,23 +132,14 @@ main{
     font-size: 1.5rem;
 }
 
-#text{
-    font-size: 3rem;
-    vertical-align: bottom;
-}
 
 .typing-wrapper {
-    display: inline-block;
-    vertical-align: bottom;
+    display: flex;
+    background-color: #898989;
+    height: 62px;
+    width: 500px;
 }
 
-.typing-animation{
-    animation: typing 5s steps(30, end);
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    animation-fill-mode: forwards;
-}
 
 
 
@@ -183,7 +174,7 @@ main{
     align-items: center;
     justify-content: center;
     border-radius: 20%;
-    animation: Animation 8s 4s infinite alternate;
+    animation: Animation 8s 4s;
 
 }
 
@@ -191,13 +182,16 @@ main{
     width: 200px;
     height: 200px;
     background-color: var(--corP);
-    animation: Animation 8s infinite;
+    animation: Animation 8s;
 }
 
 @keyframes Animation {
     0% {
         transform: rotate(0deg);
         border-radius: 0%;
+    }
+    25%{
+        transform: scale(.5);
     }
     50% {
         transform: rotate(360deg);
