@@ -4,6 +4,8 @@
     --corP: #1e1e1e;
     --corS: #fff;
     --corT: #898989;
+    --fP: Poppins, sans-serif;
+    --fS: Ubuntu, sans-serif;
 }
 
 *{
@@ -60,8 +62,8 @@ nav.menu {
 
 .menu ul li a{
     height: 1rem;
-    font-family: Poppins , sans-serif ;
-    font-weight: 400;
+    font-family: var(--fS) ;
+    font-weight: 500;
     font-size: 1rem;
     color: var(--corS);
     text-decoration: none;
@@ -109,7 +111,6 @@ main{
 
 
 .banner{
-    background-color: aqua;
     display: flex;
     margin: 0;
     height: 100%;
@@ -120,40 +121,52 @@ main{
 
 .text-banner{
     text-align: center;
-    background-color: bisque;
-    font-family: Poppins, sans-serif;
+    font-family: var(--fP);
 }
 
+#nameBanner{
+    font-size: 1.5rem;
+}
 
-/*.text-banner .text-wrapper {
-    font-size: 2rem;
-    margin: 20px 0;
+.text-wrapper{
     line-height: 0;
-}*/
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 30px;
+}
 
-.text-wrapper {
-    background-color: red;
-    height: 50px;
+
+#text1 {
+    opacity: 0;
+}
+#text2 {
+    opacity: 0;
+}
+#text3 {
+    opacity: 0;
+}
+
+.animation{
+    animation: animation 3s ease-out infinite;
+    animation-delay: 0s;
+    opacity: 1;
+}
+
+@keyframes animation{
+    0%{opacity: 0;
+        transform:translateY(20px);
+    }50%{ opacity: 1;
+        transform:translateY(0);
+    }75%{ opacity: .6;
+        transform:translateY(-15);
+    }100%{ opacity: 0;
+        transform:translateY(-30px) rotateX(-360deg);
+    }
+}
+
+.text-banner h1{
     font-size: 2rem;
-    margin: 20px 0;
-    line-height: 0;
 }
-
-.animated-text {
-    overflow: hidden;
-    white-space: nowrap;
-    animation:rollUp 10s;
-}
-
-@keyframes rollUp {
-    0% {
-    transform: translateY(100%);
-    }
-    100% {
-    transform: translateY(-100%);
-    }
-}
-
 
 .social-area{
     display: flex;
@@ -177,9 +190,22 @@ main{
     transition: .7s;
 }
 
-
+.container.sobre{
+    text-align: center;
+}
 
 .sobre{
     width:80%;
     height:100vh;
+}
+
+.text-area h2{
+    font-size: 2rem;
+    font-family: var(--fP);
+    margin-bottom: 30px;
+}
+.text-area p{
+    font-size: 1rem;
+    font-family: var(--fP);
+    font-weight: 500;
 }
