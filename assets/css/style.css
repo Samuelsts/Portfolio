@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,600;1,700;1,800&family=Ubuntu:ital,wght@0,400;0,500;0,700;1,700&display=swap');
 
+
 :root{
     --corP: #1e1e1e;
     --corS: #fff;
@@ -109,7 +110,6 @@ main{
 
 }
 
-
 .banner{
     display: flex;
     margin: 0;
@@ -122,6 +122,7 @@ main{
 .text-banner{
     text-align: center;
     font-family: var(--fP);
+    margin-bottom: 10px;
 }
 
 #nameBanner{
@@ -157,12 +158,14 @@ main{
         transform:translateY(20px);
     }50%{ opacity: 1;
         transform:translateY(0);
-    }75%{ opacity: .6;
+    }75%{ opacity: .3;
         transform:translateY(-15);
     }100%{ opacity: 0;
-        transform:translateY(-30px) rotateX(-360deg);
+        transform:translateY(-30px) ;
     }
 }
+
+
 
 .text-banner h1{
     font-size: 2rem;
@@ -170,23 +173,29 @@ main{
 
 .social-area{
     display: flex;
-    height: auto;
-    width: 200px;
-    margin-top: 50px;
+    height: 100px;
+    width: 300px;
+    margin-top: 8px;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    transition: 5ms ease-in;
 }
 .social-link{
-    font-size: 4rem;
+    font-size: 50px;
 }
 
 .social-link a{
     color: var(--corT);
 }
 
+.social-link .fa-brands.fa-linkedin{
+    margin-left: 50px;
+}
+
 .social-link a:hover {
     color: var(--corP);
-    font-size: 5rem;
+    font-size: 70px;
     transition: .7s;
 }
 
@@ -194,12 +203,8 @@ main{
     text-align: center;
 }
 
-.sobre{
-    width:80%;
-    height:100vh;
-}
 
-.text-area h2{
+h2{
     font-size: 2rem;
     font-family: var(--fP);
     margin-bottom: 30px;
@@ -208,4 +213,26 @@ main{
     font-size: 1rem;
     font-family: var(--fP);
     font-weight: 500;
+}
+
+.tech-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+
+.tech-area ul{
+    display: flex;
+    list-style: none;
+}
+
+.tech-icon{
+    margin-right: 20px;
+}
+
+.container.projetos{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
 }
