@@ -42,6 +42,7 @@ h3{
 
 p{
     color: var(--cT);
+    text-align: justify;
 }
 
 html {
@@ -65,13 +66,14 @@ html {
     z-index: 999;
     background-color: transparent;
     cursor: pointer;
-    opacity: 1;
+    opacity: 0.5;
     visibility: hidden;
     transition: all .4s ease;
+    
 }
 
 .scrolltop.active{
-    opacity: 1;
+    opacity: .8;
     visibility: visible;
 }
 
@@ -184,17 +186,17 @@ section.hero-area .flex{
 }
 
 @keyframes fadetext {
-    0% { opacity: 0; transform: rotateX(90deg); top: 20px;
+    0% { opacity: 0; transform: rotateX(90deg); top: 10px;
     }10% { 
         opacity: 1; transform: rotateX(0); top: 0px;
     } 30% {
         opacity: 1; transform: rotateX(0); top: 0px;
     }40% { 
-        opacity: 0; transform: rotateX(-45deg); top: 20px;
+        opacity: 0; transform: rotateX(-45deg); top: 10px;
     }50% { 
-        opacity: 0; transform: rotateX(-90deg); top: 25px;
+        opacity: 0; transform: rotateX(-90deg); top: 5px;
     }100% { 
-        opacity: 0; transform: rotateX(-90deg); top: 30px;
+        opacity: 0; transform: rotateX(-90deg); top: 20px;
     }
 }
 
@@ -227,6 +229,8 @@ section.hero-area .flex{
     width: 80px;
     height: 80px;
     cursor: pointer;
+    transition: 1s;
+    
 }
 
 
@@ -238,6 +242,9 @@ section.hero-area .flex{
     
 }
 
+
+
+
 /*.hero-area .img-hero img{
     position: relative;
     animation: fluter 2s ease-in-out infinite alternate;  IMAGEM FLUTUANDO NA TELA PRINCIPAL
@@ -246,7 +253,7 @@ section.hero-area .flex{
 /* Tecnologias */
 section.tecnologias{
     padding: 80px 4%;
-    transition:  10s ease;
+    height: 100vh;
 }
 
 .tec-box{
@@ -272,6 +279,7 @@ section.tecnologias{
     height: 80px;
     width: auto;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .tec-box img:hover{
@@ -302,11 +310,30 @@ section.tecnologias{
 section.sobre{
     padding: 80px 4%;
     height: 100vh;
+
 }
 
 section.sobre .flex{
     align-items: center;
     gap: 60px;
+    flex-direction: column-reverse;
+    
+}
+
+.sobre .blob{
+    width: 300px;
+    height: 300px;
+    border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+    overflow: hidden;
+    animation: flow 4s infinite ease-in-out;
+    background-color: var(--cS);
+}
+
+.blob img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
 }
 
 .sobre .txt-sobre{
@@ -314,13 +341,30 @@ section.sobre .flex{
 }
 
 .sobre .txt-sobre h2{
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 30px;
 }
 
 .sobre .txt-sobre p{
     margin: 20px 0;
     text-align: justify;
+}
+
+
+
+@keyframes flow{
+    0%{
+        border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+    }
+    35%{
+        border-radius: 80% 70% 60% 60% / 80% 70% 60% 60%;
+    }
+    70%{
+        border-radius: 70% 90% 60% 70% / 80% 90% 50% 90%;
+    }
+    100%{
+        border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
+    }
 }
 
 /* estilo Projetos */
@@ -337,8 +381,8 @@ section.projetos .flex{
 }
 
 section.projetos .img-proj{
-    width: 360px;
-    height: 460px;
+    width: 280px;
+    height: 420px;
     background-size: cover;
     background-position: 100% 0%;   /*Primeiro valor eixo x segundo valor eixo y*/
     transition: 9s;                 /*deixar rolagem suave*/
@@ -373,7 +417,6 @@ section.projetos .img-proj{
 
 section.projetos .img-proj:hover{
     background-position: 100% 100%; /*efeito de rolagem*/
-    transform: scale(1.1);
 }
 
 .img1{
@@ -449,3 +492,102 @@ footer{
 
 
 
+/* Responsividade */
+
+@media screen and (max-width:1020px){
+
+    /*classes gerais  */
+.flex{
+    flex-direction: column;
+}
+
+    /* cabeçalho */
+
+.menu-desktop, .btn-contato, .scrolltop{
+    display: none;
+}
+
+
+    /* hero area */
+
+.txt-title .txt-rolling{
+    font-size: 28px;
+}
+
+.hero-area .txt-hero h1{
+    font-size: 20px;
+    margin-bottom: -30px;
+}
+
+.hero-area{
+    margin-top: 120px;
+}
+
+/* Tecnologias */
+
+section.tecnologias{
+    padding: 80px 4%;
+    height: 100vh;
+    
+}
+
+
+.tec-box{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row: auto;
+    text-align: center;
+    margin-bottom: 150px;
+}
+
+
+/* sobre */
+section.sobre{
+    margin-top: 150px;
+}
+
+.sobre .txt-sobre h2{
+    text-align: center;
+}
+section.sobre .flex{
+    flex-direction: column-reverse;
+    
+}
+
+.sobre .blob{
+    width: 200px;
+    height: 240px;
+}
+
+
+
+
+
+
+/* Projetos */
+section.projetos{
+    margin-top: 00px;
+    height: 100vh;
+    margin-bottom: 1000px;
+}
+
+
+section.projetos .flex{
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+.proj-area .img-proj{
+    margin-bottom: 50px;
+}
+
+/* Form */
+
+section.formulario{
+    
+}
+
+}
