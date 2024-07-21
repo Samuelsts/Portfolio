@@ -69,7 +69,6 @@ html {
     opacity: 0.5;
     visibility: hidden;
     transition: all .4s ease;
-    
 }
 
 .scrolltop.active{
@@ -84,9 +83,9 @@ html {
 /* estilo do cabeçalho */
 
 header{
-    padding: 40px 4%;
     background-color: var(--cP);
     font-family: 'Montserrat';
+    padding: 40px 0px;
 }
 
 header > .interface{
@@ -141,6 +140,7 @@ header .btn-contato button:hover{
 section.hero-area{
     padding: 80px 4%;
     height: 100vh;
+    margin-top: 100px;
 }
 
 section.hero-area .flex{
@@ -287,7 +287,6 @@ section.tecnologias{
     transform: scale(1.5);
     width: auto;
     transition: 1.5s;
-    filter: grayscale(0);
     animation: fluter 400ms ease-in-out infinite alternate;
     
     
@@ -488,6 +487,7 @@ footer{
     background-color: var(--cP);
     color: var(--cT);
     text-align: center;
+    display: flex;
 }
 
 
@@ -528,7 +528,7 @@ footer{
 section.tecnologias{
     padding: 80px 4%;
     height: 100vh;
-    
+    margin-bottom: 300px;
 }
 
 
@@ -586,8 +586,5 @@ section.projetos .flex{
 
 /* Form */
 
-section.formulario{
-    
-}
 
 }
