@@ -252,25 +252,18 @@ section.hero-area .flex{
     height: 80px;
     cursor: pointer;
     transition: 1s;
-    
+    animation: zoom-in-out 5s infinite;
+    animation-delay: 5s;
 }
 
 
-.social-area .social-icon:hover{
-    transform: scale(1.5);
-    position: relative;
-    /* animation: fluter 1000ms ease-in-out infinite alternate; */
-    transition: 1s;
-    
+@keyframes zoom-in-out{
+    0%,25%,100%{
+        transform: scale(1);
+    }12.5%{
+        transform: scale(1.5);
+    }
 }
-
-
-
-
-/*.hero-area .img-hero img{
-    position: relative;
-    animation: fluter 2s ease-in-out infinite alternate;  IMAGEM FLUTUANDO NA TELA PRINCIPAL
-}*/
 
 /* Tecnologias */
 section.tecnologias{
@@ -278,38 +271,69 @@ section.tecnologias{
     height: 100vh;
 }
 
-.tec-box{
-    padding:10px;
-    text-align: center;
-    margin: 150px 0px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.tec-box h3{
-    font-size: 20px;
-    text-align: center;
-}
-
-.tec-box-item{
-    padding: 10px;
-}
-
-.tec-box img{
-    height: 80px;
-    width: auto;
-    cursor: pointer;
-}
-
-.tec-box img:hover{
+.logos{
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
     position: relative;
-    transform: scale(1.2);
-    width: auto;
-    transition: 1.5s;
-    animation: fluter 400ms ease-in-out infinite alternate;
-    
-    
+    margin-top: 100px;
 }
+
+.tecnologias p{
+    text-align: center;
+}
+
+.logos::before, 
+.logos::after {
+    position: absolute;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255,255,255,0), white);
+    content: "";
+    z-index: 2;
+}
+
+.logos::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), white);
+}
+
+.logos::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), white);
+}
+
+.logos:hover .logos-slide{
+    animation-play-state: paused;
+}
+
+.logos-slide{
+    display: inline-block;
+    animation: slide 30s infinite linear;
+}
+
+.logos-slide img{
+    height: 60px;
+    margin: 0 60px;
+    cursor: pointer;
+    filter: grayscale(200%) invert(100) brightness(-10%);
+}
+
+.logos-slide img:hover{
+    transform: scale(1.5);
+    transition: 2s;
+    filter: grayscale(0%) contrast(100%);
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }to {
+        transform: translateX(-100%);
+    }
+}
+
 
 /* animação tecnologias*/
 @keyframes fluter{
@@ -320,6 +344,7 @@ section.tecnologias{
         top: 10px;
     }
 }
+
 
 
 
@@ -397,7 +422,6 @@ section.projetos{
 section.projetos .flex{
     justify-content: space-around;
     margin-top: 60px;
-    
 }
 
 section.projetos .img-proj{
@@ -410,7 +434,6 @@ section.projetos .img-proj{
     border-radius: 20px;
     position: relative;
     box-shadow: 0px 0px 3px #0a0a0a;
-
 }
 
 .overlay{
@@ -512,7 +535,6 @@ footer{
 }
 
 
-
 /* Responsividade */
 
 @media screen and (max-width:1020px){
@@ -522,7 +544,9 @@ footer{
     flex-direction: column;
 }
 
-
+.logo img{
+    margin-left: 20px;
+}
 
 
     /* cabeçalho */
@@ -554,39 +578,38 @@ section.tecnologias{
     height: 100vh;
 }
 
-.tec-box{
-    padding: 10px;
-    text-align: center;
-    margin: 150px 0px;
-    align-items: center;
-    justify-content: start;
+.logos-slide img{
+    height: 40px;
+    margin: 0 10px;
+}
+
+.logos::before, 
+.logos::after {
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    background: linear-gradient(to left, rgba(255,255,255,0), white);
+    content: "";
+    z-index: 2;
 }
 
 
-.tec-box img{
-    height: 80px;
-    width: auto;
-    cursor: pointer;
+.logos::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255,255,255,0), white);
 }
 
-
-.tec-box{
-    margin-top: 30px;
-    width:100%;
-    height: auto;
-    flex-wrap:wrap;
-    flex-direction: row;
-    gap: 15px;
+.logos::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255,255,255,0), white);
 }
 
-.tec-box-item img{
-    width: auto;
+.logos-slide img{
     height: 60px;
-}
-
-
-.tec-box h3{
-    display: none;
+    margin: 0 30px;
+    cursor: pointer;
+    filter: grayscale(200%) invert(100) brightness(-10%);
 }
 
 
@@ -606,17 +629,12 @@ section.sobre .flex{
 }
 
 
-
-
-
-
 /* Projetos */
 section.projetos{
     margin-top: 00px;
     height: 100vh;
     margin-bottom: 1000px;
 }
-
 
 section.projetos .flex{
     justify-content: center;
@@ -627,9 +645,4 @@ section.projetos .flex{
 
 .proj-area .img-proj{
     margin-bottom: 50px;
-}
-
-/* Form */
-
-
 }
