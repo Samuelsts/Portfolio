@@ -49,6 +49,19 @@ html {
     scroll-behavior: smooth;
 }
 
+.logo img{
+    width: 60px;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.logo img:hover{
+    opacity: 1;
+    transition: 500ms;
+}
+
+
 
 /* estilo botão scroll up */
 .scrolltop{
@@ -66,13 +79,13 @@ html {
     z-index: 999;
     background-color: transparent;
     cursor: pointer;
-    opacity: 0.5;
+    opacity: .4;
     visibility: hidden;
     transition: all .4s ease;
 }
 
 .scrolltop.active{
-    opacity: .8;
+    opacity: .6;
     visibility: visible;
 }
 
@@ -80,12 +93,21 @@ html {
     width: 100%;
 }
 
+.scrolltop img:hover{
+    transform: scale(1.5);
+    transition: 500ms;
+    filter: contrast(500%);
+}
+
 /* estilo do cabeçalho */
 
 header{
     background-color: var(--cP);
     font-family: 'Montserrat';
-    padding: 40px 0px;
+    padding: 10px 0px;
+    width: 100%;
+    top: 0;
+    padding-bottom: 30px;
 }
 
 header > .interface{
@@ -93,6 +115,7 @@ header > .interface{
     align-items: center;
     justify-content: space-between;
 }
+
 
 header a{
     color: var(--cT);
@@ -116,9 +139,8 @@ header nav ul{
 
 header nav ul li{
     display: inline-block;
-    padding: 5px 40px;
-    height: 20px;
-    
+    padding: 10px 40px;
+    height: 40px;
 }
 
 header .btn-contato button{
@@ -257,12 +279,11 @@ section.tecnologias{
 }
 
 .tec-box{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-row: auto;
-    padding: 20px;
+    padding:10px;
     text-align: center;
     margin: 150px 0px;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .tec-box h3{
@@ -271,20 +292,18 @@ section.tecnologias{
 }
 
 .tec-box-item{
-    margin: 20px;
     padding: 10px;
 }
 
 .tec-box img{
     height: 80px;
     width: auto;
-    margin-bottom: 20px;
     cursor: pointer;
 }
 
 .tec-box img:hover{
     position: relative;
-    transform: scale(1.5);
+    transform: scale(1.2);
     width: auto;
     transition: 1.5s;
     animation: fluter 400ms ease-in-out infinite alternate;
@@ -309,6 +328,7 @@ section.tecnologias{
 section.sobre{
     padding: 80px 4%;
     height: 100vh;
+    margin-bottom: 400px;
 
 }
 
@@ -326,6 +346,7 @@ section.sobre .flex{
     overflow: hidden;
     animation: flow 4s infinite ease-in-out;
     background-color: var(--cS);
+    box-shadow: 17px 17px 30px #d0d0d0,-17px -17px 30px #f0f0f0;
 }
 
 .blob img{
@@ -501,6 +522,9 @@ footer{
     flex-direction: column;
 }
 
+
+
+
     /* cabeçalho */
 
 .menu-desktop, .btn-contato, .scrolltop{
@@ -528,24 +552,45 @@ footer{
 section.tecnologias{
     padding: 80px 4%;
     height: 100vh;
-    margin-bottom: 300px;
+}
+
+.tec-box{
+    padding: 10px;
+    text-align: center;
+    margin: 150px 0px;
+    align-items: center;
+    justify-content: start;
+}
+
+
+.tec-box img{
+    height: 80px;
+    width: auto;
+    cursor: pointer;
 }
 
 
 .tec-box{
     margin-top: 30px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-row: auto;
-    text-align: center;
-    margin-bottom: 150px;
+    width:100%;
+    height: auto;
+    flex-wrap:wrap;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.tec-box-item img{
+    width: auto;
+    height: 60px;
+}
+
+
+.tec-box h3{
+    display: none;
 }
 
 
 /* sobre */
-section.sobre{
-    margin-top: 150px;
-}
 
 .sobre .txt-sobre h2{
     text-align: center;
