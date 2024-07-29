@@ -41,6 +41,7 @@ h3{
 }
 
 p{
+    font-size: 18px;
     color: var(--cT);
     text-align: justify;
 }
@@ -116,7 +117,6 @@ header > .interface{
     justify-content: space-between;
 }
 
-
 header a{
     color: var(--cT);
     text-decoration: none;
@@ -131,11 +131,15 @@ header a:hover{
     transition: 500ms;
 }
 
+.active{
+    color: var(--cS);
+    transform: scale(1.3);
+    transition: 500ms;
+}
 
 header nav ul{
     list-style: none;
 }
-
 
 header nav ul li{
     display: inline-block;
@@ -150,13 +154,12 @@ header .btn-contato button{
     background-color: var(--cT);
     border: none;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 header .btn-contato button:hover{
     background-color: var(--cS);
 }
-
-
 
 /* estilo hero area */
 section.hero-area{
@@ -256,6 +259,10 @@ section.hero-area .flex{
     animation-delay: 5s;
 }
 
+.social-area:hover .social-icon {
+    animation-play-state: paused;
+}
+
 
 @keyframes zoom-in-out{
     0%,25%,100%{
@@ -271,6 +278,13 @@ section.tecnologias{
     height: 100vh;
 }
 
+.tec-p{
+    font-size: 16px;
+    margin-bottom: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .logos{
     overflow: hidden;
     padding: 60px 0;
@@ -279,15 +293,11 @@ section.tecnologias{
     margin-top: 100px;
 }
 
-.tecnologias p{
-    text-align: center;
-}
-
 .logos::before, 
 .logos::after {
     position: absolute;
     top: 0;
-    width: 200px;
+    width: 100px;
     height: 100%;
     background: linear-gradient(to left, rgba(255,255,255,0), white);
     content: "";
@@ -310,12 +320,12 @@ section.tecnologias{
 
 .logos-slide{
     display: inline-block;
-    animation: slide 30s infinite linear;
+    animation: slide 40s infinite linear;
 }
 
 .logos-slide img{
     height: 60px;
-    margin: 0 60px;
+    margin: 0 40px;
     cursor: pointer;
     filter: grayscale(200%) invert(100) brightness(-10%);
 }
@@ -326,9 +336,10 @@ section.tecnologias{
     filter: grayscale(0%) contrast(100%);
 }
 
+
 @keyframes slide{
     from{
-        transform: translateX(0);
+        transform: translateX(0%);
     }to {
         transform: translateX(-100%);
     }
@@ -346,27 +357,22 @@ section.tecnologias{
 }
 
 
-
-
 /* estilo sobre */
 
 section.sobre{
     padding: 80px 4%;
     height: 100vh;
-    margin-bottom: 400px;
 
 }
 
 section.sobre .flex{
     align-items: center;
     gap: 60px;
-    flex-direction: column-reverse;
-    
 }
 
 .sobre .blob{
-    width: 300px;
-    height: 300px;
+    width: 500px;
+    height: 280px;
     border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
     overflow: hidden;
     animation: flow 4s infinite ease-in-out;
@@ -391,10 +397,19 @@ section.sobre .flex{
 }
 
 .sobre .txt-sobre p{
-    margin: 20px 0;
+    margin: 20px;
     text-align: justify;
 }
 
+.sobre .social-icon{
+    width: 40px;
+}
+
+.sc-area{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
 
 
 @keyframes flow{
@@ -418,64 +433,92 @@ section.projetos{
     padding: 80px 4%;
     height: 100vh;
 }
-
-section.projetos .flex{
+.proj-area{
+    margin-top: 30px;
     justify-content: space-around;
-    margin-top: 60px;
+    flex-wrap: wrap;
+    height: auto;
+
 }
 
-section.projetos .img-proj{
-    width: 280px;
-    height: 420px;
+.proj-card{
+    height: 300px;
+    width: 500px;
+    background-color: var(--cP);
+    color: var(--cS);
+    border-radius: 25px;
+    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
+    margin: 20px;
+}
+
+.p-side{
+    position: relative;
+    width:200px;
+    height: 100%;
+    border-radius: 25px;
+    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.473);
+    transition: transform 300ms ease;
+    transform: translateZ(0) scale(1.05) perspective(1000px);
+	float: left;
+    background-image: url("../images/Novo\ Projeto.jpg");
     background-size: cover;
     background-position: 100% 0%;   /*Primeiro valor eixo x segundo valor eixo y*/
-    transition: 9s;                 /*deixar rolagem suave*/
+    transition: 2s;                 /*deixar rolagem suave*/
+    overflow: hidden;
     cursor: pointer;
-    border-radius: 20px;
+}
+
+.p-side:hover{
+    transform: scale(1.2) perspective(1500px) rotateY(30deg);
+    background-position: 100% 100%;
+    transition: 5s; 
+}
+
+.i-side{
+    float: left;
     position: relative;
-    box-shadow: 0px 0px 3px #0a0a0a;
+    height: 100%;
+    text-align: center;
+    width: 290px;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    padding: 15px 10px;
+
+
 }
 
-.overlay{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width:100%;
-    height:100%;
-    background-color: #00000093;
-    border-radius: 20px;
+.today-info-container{
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    font-weight: 600;
-    font-size: 24px;
-    color: var(--cS);
-    opacity: 0;
-    transition: 600ms;
-}   
-
-.overlay:hover{
-    opacity: 1;
 }
 
-section.projetos .img-proj:hover{
-    background-position: 100% 100%; /*efeito de rolagem*/
+.today-info {
+	padding: 0px;
+	margin: 0 15px 15px 15px;
+    text-align: center;
 }
 
-.img1{
-    background: url(../images/Novo\ Projeto.jpg);
+
+.today-info>div .title {
+	font-weight: 700;
+    text-align: center;
 }
-.img2{
-    background: url(../images/Novo\ Projeto.jpg);
-}
-.img3{
-    background: url(../images/Novo\ Projeto.jpg);
+
+.i-text p{
+    padding: 0 10px 0px 20px;
+    color: #c0c0c0;
+    height: 200px;
+    font-size: 16px;
+
 }
 
 /* estilo formulario */
 
 section.formulario{
     padding: 80px 4%;
+    margin-top: 300px;
 }
 
 form{
@@ -537,7 +580,7 @@ footer{
 
 /* Responsividade */
 
-@media screen and (max-width:1020px){
+@media screen and (max-width:1120px){
 
     /*classes gerais  */
 .flex{
@@ -547,6 +590,7 @@ footer{
 .logo img{
     margin-left: 20px;
 }
+
 
 
     /* cabeçalho */
@@ -631,7 +675,7 @@ section.sobre .flex{
 
 /* Projetos */
 section.projetos{
-    margin-top: 00px;
+    margin-top: 400px;
     height: 100vh;
     margin-bottom: 1000px;
 }
@@ -643,6 +687,7 @@ section.projetos .flex{
     
 }
 
-.proj-area .img-proj{
+.proj-card{
     margin-bottom: 50px;
+}
 }
