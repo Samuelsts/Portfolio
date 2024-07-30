@@ -352,7 +352,7 @@ section.tecnologias{
         top: 0;
     }
     100%{
-        top: 10px;
+        top: 20px;
     }
 }
 
@@ -426,6 +426,60 @@ section.sobre .flex{
         border-radius: 60% 40% 40% 60% / 60% 40% 60% 40%;
     }
 }
+/* estilo Serviços */
+
+section.servicos{
+    padding: 80px 4%;
+    height: 100vh;
+}
+
+.servicos .img-area{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.servicos .img-area:hover{
+    position: relative;
+    animation: fluter 1s infinite alternate;
+    cursor: pointer;
+}
+.card-serv {
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.card{
+    color: var(--cT);
+    font-weight: 800;
+    padding: 30px;
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow:  8px 8px 16px #c2c2c2,-8px -8px 16px #ffffff;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.card:hover{
+    background-color: #1a1a1a;
+    color: var(--cS);
+    font-weight: 800;
+    padding: 30px;
+    text-align: center;
+    width: 200px;
+    height: 150px;
+    border-radius: 30%;
+    transition: 1s; 
+}
+
+.sub-serv{
+    text-align: center;
+}
+
 
 /* estilo Projetos */
 
