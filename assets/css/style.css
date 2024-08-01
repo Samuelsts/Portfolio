@@ -108,7 +108,7 @@ header{
     padding: 10px 0px;
     width: 100%;
     top: 0;
-    padding-bottom: 30px;
+    padding: 30px 4%;
 }
 
 header > .interface{
@@ -433,18 +433,9 @@ section.servicos{
     height: 100vh;
 }
 
-.servicos .img-area{
-    position: relative;
-    display: flex;
-    justify-content: center;
-}
-
-.servicos .img-area:hover{
-    position: relative;
-    animation: fluter 1s infinite alternate;
-    cursor: pointer;
-}
 .card-serv {
+    height: auto;
+    width: 100%;
     margin-top: 50px;
     justify-content: center;
     align-items: center;
@@ -453,32 +444,56 @@ section.servicos{
 
 .card{
     color: var(--cT);
-    font-weight: 800;
     padding: 30px;
-    text-align: center;
-    width: 200px;
-    height: 150px;
+    width: 220px;
+    height: 250px;
     border-radius: 10px;
-    box-shadow:  8px 8px 16px #c2c2c2,-8px -8px 16px #ffffff;
     cursor: pointer;
     transition: 1s;
+    filter: grayscale(130%);
+    justify-content: center;
+    align-items: center;
 }
 
 .card:hover{
-    background-color: #1a1a1a;
-    color: var(--cS);
-    font-weight: 800;
-    padding: 30px;
+    color: var(--cT);
+    transform: scale(1.2);
+    transition: 1s;
+    filter: grayscale(0%);
+    font-weight: bold;
+}
+
+.dvw{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-image: url(../images/responsivo.gif);
+    background-size: cover;
     text-align: center;
-    width: 200px;
-    height: 150px;
-    border-radius: 30%;
-    transition: 1s; 
+}
+.cs{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-image: url(../images/local-na-rede-internet.gif);
+    background-size: cover;
+}
+.ci{
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-image: url(../images/estrutura-da-web.gif );
+    background-size: cover;
 }
 
 .sub-serv{
     text-align: center;
 }
+
+.card-serv p{
+    text-align: center;
+    font-size: 16px;
+} 
 
 
 /* estilo Projetos */
@@ -572,7 +587,7 @@ section.projetos{
 
 section.formulario{
     padding: 80px 4%;
-    margin-top: 300px;
+    margin-top: 600px;
 }
 
 form{
@@ -644,7 +659,6 @@ footer{
 .logo img{
     margin-left: 20px;
 }
-
 
 
     /* cabeçalho */
@@ -726,6 +740,22 @@ section.sobre .flex{
     height: 240px;
 }
 
+/* serviços */
+
+section.servicos{
+    margin-top: 300px;
+}
+
+.card{
+    color: var(--cT);
+    padding: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    filter: grayscale(130%);
+}
 
 /* Projetos */
 section.projetos{
@@ -744,4 +774,125 @@ section.projetos .flex{
 .proj-card{
     margin-bottom: 50px;
 }
+}
+
+@media screen and (max-width:601px){
+
+
+
+/* hero */
+    section.hero-area{
+        padding: 80px 4%;
+        height: 100vh;
+        margin-top: 100px;
+    }
+    
+    section.hero-area .flex{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    
+    .txt-title {
+        width: 100%;
+        height: 80px;
+    }
+
+    .hero-area .txt-hero h1{
+        color: var(--cP);
+        font-size: 16px;
+        font-weight: 400;
+    }
+    
+    .txt-title .txt-rolling {
+        font-weight:700 ;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        opacity: 0;
+        animation: fadetext 10s infinite ;
+        transform-origin: center;
+    }
+
+    .txt-rolling:nth-child(1) {
+        animation-delay: 0s;
+    }
+    
+    .txt-rolling:nth-child(2) {
+        animation-delay: 3s;
+    }
+    
+    .txt-rolling:nth-child(3) {
+        animation-delay: 6s;
+    }
+    
+
+
+/* serviços */
+
+section.servicos{
+    margin-top: 900px;
+}
+
+.card{
+    color: var(--cT);
+    padding: 30px;
+    width: 200px;
+    height: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+    filter: grayscale(130%);
+}
+
+
+
+/* Projetos */
+section.projetos{
+    margin-top: 400px;
+    height: 100vh;
+    margin-bottom: 1000px;
+}
+
+section.projetos .flex{
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    
+}
+
+
+.proj-card{
+    height: 400px;
+    width: 250px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.p-side{
+    position: relative;
+    width:100%;
+    height: 100%;
+}
+
+
+.i-side{
+    height: 1000px;
+    width: auto;
+}
+
+.today-info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
 }
