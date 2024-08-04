@@ -125,7 +125,7 @@ header a{
     position: relative;
 }
 
-header a:hover{
+header .menu-desktop a:hover{
     color: var(--cS);
     transform: scale(1.3);
     transition: 500ms;
@@ -141,7 +141,7 @@ header nav ul{
     list-style: none;
 }
 
-header nav ul li{
+header nav.menu-desktop ul li{
     display: inline-block;
     padding: 10px 40px;
     height: 40px;
@@ -160,6 +160,66 @@ header .btn-contato button{
 header .btn-contato button:hover{
     background-color: var(--cS);
 }
+
+/* menu mobile */
+
+.btn-abrir img{
+    width: 40px;
+    opacity: .5;
+}
+
+.btn-fechar img{
+    width: 40px;
+}
+
+.menu-mob .btn-fechar{
+    padding: 20px 4%;
+}
+.menu-mob{
+    height: 100vh;
+    width: 0%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    z-index: 999;
+    background-color: var(--cP);
+    overflow: hidden;
+}
+
+.menu-mob nav ul{
+    text-align: right;
+}
+
+.menu-mob nav ul li a{
+    color: var(--cS);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 20px 30px 20px ;
+    display: block;
+}
+
+.menu-mob nav ul li a:hover{
+    background-color: var(--cT);
+    font-size: 24px;
+    transition: 900ms;
+}
+
+.overlay-menu-mob{
+    background-color: #1a1a1a;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    right: 0px;
+    position: fixed;
+    z-index: 988;
+    opacity: .8;
+    display: none;
+}
+
+.btn-abrir{
+    display: none;
+}
+
 
 /* estilo hero area */
 section.hero-area{
@@ -242,7 +302,7 @@ section.hero-area .flex{
 }
 
 .social-area {
-    width: 400px;
+    width: 100%;
     height: 200px;
     display: inline-flex;
     justify-content: center;
@@ -650,6 +710,11 @@ footer{
 /* Responsividade */
 
 @media screen and (max-width:1120px){
+
+
+.btn-abrir{
+        display: block;
+    }
 
     /*classes gerais  */
 .flex{
