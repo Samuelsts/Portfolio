@@ -184,6 +184,7 @@ header .btn-contato button:hover{
     z-index: 999;
     background-color: var(--cP);
     overflow: hidden;
+    transition: .7s;
 }
 
 .menu-mob nav ul{
@@ -212,7 +213,7 @@ header .btn-contato button:hover{
     right: 0px;
     position: fixed;
     z-index: 988;
-    opacity: .8;
+    opacity: .6;
     display: none;
 }
 
@@ -220,6 +221,13 @@ header .btn-contato button:hover{
     display: none;
 }
 
+.menu-mob.abr-mb{
+    width: 70%;
+}   
+
+.menu-mob.abr-mb ~ .overlay-menu-mob{
+    display: block;
+}   
 
 /* estilo hero area */
 section.hero-area{
@@ -527,23 +535,41 @@ section.servicos{
     width: 100%;
     height: 100%;
     background-position: center;
-    background-image: url(../images/responsivo.gif);
+    background-image: url(../images/c1.png);
     background-size: cover;
     text-align: center;
 }
+
+.i-1:hover> .dvw{
+    background-image: url(../images/responsivo.gif);
+    transition: all ;
+}
+
 .cs{
     width: 100%;
     height: 100%;
     background-position: center;
-    background-image: url(../images/local-na-rede-internet.gif);
+    background-image: url(../images/c2.png);
     background-size: cover;
 }
+
+.i-2:hover> .cs{
+    background-image: url(../images/local-na-rede-internet.gif);
+    transition: all ;
+
+}
+
 .ci{
     width: 100%;
     height: 100%;
     background-position: center;
-    background-image: url(../images/estrutura-da-web.gif );
+    background-image: url(../images/c3.png );
     background-size: cover;
+}
+
+.i-3:hover> .ci{
+    background-image: url(../images/estrutura-da-web.gif);
+    transition: all ;
 }
 
 .sub-serv{
@@ -563,85 +589,159 @@ section.projetos{
     height: 100vh;
 }
 .proj-area{
-    margin-top: 30px;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 150px;
+    height: 700px;
+    width: 100%;
     flex-wrap: wrap;
-    height: auto;
-
-}
-
-.proj-card{
-    height: 300px;
-    width: 500px;
-    background-color: var(--cP);
-    color: var(--cS);
-    border-radius: 25px;
-    box-shadow: 0 0 70px -10px rgba(0, 0, 0, 0.2);
-    margin: 20px;
-}
-
-.p-side{
-    position: relative;
-    width:200px;
-    height: 100%;
-    border-radius: 25px;
-    box-shadow: 0 0 20px -10px rgba(0, 0, 0, 0.473);
-    transition: transform 300ms ease;
-    transform: translateZ(0) scale(1.05) perspective(1000px);
-	float: left;
-    background-image: url("../images/Novo\ Projeto.jpg");
-    background-size: cover;
-    background-position: 100% 0%;   /*Primeiro valor eixo x segundo valor eixo y*/
-    transition: 2s;                 /*deixar rolagem suave*/
     overflow: hidden;
-    cursor: pointer;
-}
-
-.p-side:hover{
-    transform: scale(1.2) perspective(1500px) rotateY(30deg);
-    background-position: 100% 100%;
-    transition: 5s; 
-}
-
-.i-side{
-    float: left;
+    padding: 30px;
+    margin: auto;
     position: relative;
-    height: 100%;
-    text-align: center;
-    width: 290px;
-    overflow: hidden;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-    padding: 15px 10px;
-
-
 }
 
-.today-info-container{
-    display: flex;
-    flex-direction: column;
+.btn-slide:hover{
+    transform: scale(1.2);
+    transition: all .5s;
+}
+
+.btn-voltar{
+    position: absolute;
+    left: 20px;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(105, 105, 105, 0.349);
+    border-radius: 100%;
+    border: none;
+}
+
+.btn-ir{
+    position: absolute;
+    right: 20px;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(105, 105, 105, 0.349);
+    border-radius: 100%;
+    border: none;
+}
+
+
+.container{
     justify-content: center;
+    align-items: center;
+    gap: 50px 50px;
+    transition: 0.7s ease-in-out;
+    transform: translateX(0);
+    
 }
 
-.today-info {
-	padding: 0px;
-	margin: 0 15px 15px 15px;
+.container .card-proj{
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 420px;
+    background-color: #3a3a3a;
+    border-radius: 20px;
+    transition: .5s;
+    margin-left: 50px;
+}
+
+.container .card-proj:hover{
+    height: 480px;
+}
+
+.container .card-proj .caixaimg-proj{
+    position: absolute;
+    top: 20px;
+    width: 250px;
+    height: 270px;
+    background: #525252;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.container .card-proj .caixaimg-proj img{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .card-proj .conteudo{
+    position: absolute;
+    top: 300px;
+    width: 100%;
+    height: 90px;
     text-align: center;
+    padding: 0 30px;
+    overflow: hidden;
+}
+
+.container .card-proj:hover .caixaimg-proj {
+    top: -100px;
+    scale:.75;
+}
+
+.container .card-proj:hover .conteudo{
+    top: 170px;
+    height: 270px;
+    transition: .5s;
+}
+
+.container .card-proj .conteudo h2{
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 3rem;
+    color: var(--cS);
 }
 
 
-.today-info>div .title {
-	font-weight: 700;
-    text-align: center;
+.conteudo .tags-tec{
+    width: 100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    filter: brightness(1.2);
 }
 
-.i-text p{
-    padding: 0 10px 0px 20px;
-    color: #c0c0c0;
-    height: 200px;
-    font-size: 16px;
-
+.conteudo span img{
+    max-width: 30px;
 }
+
+.container .card-proj .conteudo p{
+    margin-top: px;
+    color: var(--cS);
+}
+
+.container .card-proj .conteudo a{
+    display: inline-block;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-top: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: var(--cT);
+    margin-left: 5px;
+}
+
+.container .card-proj .conteudo a:hover{
+    scale: 1.1;
+    color: var(--cT);
+    background-color: var(--cS);
+}
+
+
+
+
+
 
 /* estilo formulario */
 
@@ -830,20 +930,28 @@ section.projetos{
 }
 
 section.projetos .flex{
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     margin-top: 30px;
+    flex-direction: row;
+}
+
+.container{
+    /* justify-content: center; */
+    /* align-items: center; */
+    gap: 50px 30px;
+    transition: 0.7s ease-in-out;
+    transform: translateX(0);
     
 }
 
-.proj-card{
-    margin-bottom: 50px;
+.container .card-proj{
+    margin-left: 50px;
 }
+
 }
 
 @media screen and (max-width:601px){
-
-
 
 /* hero */
     section.hero-area{
@@ -935,8 +1043,27 @@ section.projetos .flex{
     height: 400px;
     width: 250px;
     margin: 10px;
-    display: flex;
-    flex-direction: column;
+    flex-direction: row;
+}
+
+
+.container{
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 50px 0px;
+    transition: 0.7s ease-in-out;
+    transform: translateX(0);
+    padding-left: 700px;
+    
+}
+
+.proj-area{
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.container .card-proj{
+    margin-left: 100px;
 }
 
 .p-side{
@@ -956,8 +1083,5 @@ section.projetos .flex{
     flex-direction: column;
     justify-content: center;
 }
-
-
-
 
 }
